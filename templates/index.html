@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letterboxd Match</title>
+
+    <style>
+        /* Aparência geral da página */
+        body {
+            font-family: Arial, sans-serif;
+            background: #14181c;
+            color: #ffffff;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        /* Área principal centralizada */
+        main {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #ff8000;
+            font-size: 36px;
+        }
+
+        .subtitulo {
+            color: #b8c0c8;
+            margin-bottom: 32px;
+        }
+
+        /* Cartões dos usuários */
+        .cartao {
+            background: #242b32;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin: 16px 0 8px;
+        }
+
+        input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #59636e;
+            border-radius: 6px;
+            background: #14181c;
+            color: white;
+        }
+
+        /* Botões da interface */
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 18px;
+            border: none;
+            border-radius: 6px;
+            background: #ff8000;
+            color: #14181c;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ffa340;
+        }
+
+        .match {
+            background: #303942;
+            color: white;
+            border: 1px solid #ff8000;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1>Letterboxd Match 🎬</h1>
+
+        <p class="subtitulo">
+            Descubra o quanto vocês combinam através dos filmes.
+        </p>
+
+        <section class="cartao">
+            <h2>1. Primeiro usuário</h2>
+            <p>Importe o histórico de avaliações da primeira pessoa.</p>
+
+            <form action="/import/ratings" method="POST"
+                  enctype="multipart/form-data">
+                <label for="username1">Nome de usuário</label>
+                <input id="username1" name="username"
+                       type="text" placeholder="Ex.: cinefila" required>
+
+                <label for="csv1">Histórico do Letterboxd (CSV)</label>
+                <input id="csv1" name="file" type="file"
+                       accept=".csv" required>
+
+                <button type="submit">Adicionar primeiro usuário</button>
+            </form>
+        </section>
+
+        <section class="cartao">
+            <h2>2. Segundo usuário</h2>
+            <p>Importe o histórico da outra pessoa.</p>
+
+            <form action="/import/ratings" method="POST"
+                  enctype="multipart/form-data">
+                <label for="username2">Nome de usuário</label>
+                <input id="username2" name="username"
+                       type="text" placeholder="Ex.: cinemaniaca" required>
+
+                <label for="csv2">Histórico do Letterboxd (CSV)</label>
+                <input id="csv2" name="file" type="file"
+                       accept=".csv" required>
+
+                <button type="submit">Adicionar segundo usuário</button>
+            </form>
+        </section>
+
+        <section class="cartao">
+            <h2>3. Compatibilidade</h2>
+            <p>Compare as avaliações compartilhadas pelos dois usuários.</p>
+
+            <button class="match" type="button" disabled>
+                Calcular Match — em desenvolvimento
+            </button>
+        </section>
+    </main>
+</body>
+</html>

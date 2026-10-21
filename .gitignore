@@ -1,0 +1,28 @@
+﻿# Ambiente virtual
+.venv/
+venv/
+
+# Arquivos temporários do Python
+__pycache__/
+*.py[cod]
+
+# Bancos de dados locais
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# Exportações pessoais do Letterboxd
+*.csv
+
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+
+# Editores
+.vscode/
+.idea/
+
+# Logs
+*.log
