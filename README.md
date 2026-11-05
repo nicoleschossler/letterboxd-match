@@ -60,7 +60,7 @@ A estrutura poderá crescer conforme novas funcionalidades forem implementadas.
 No Windows, abra o PowerShell e entre na pasta do projeto:
 
 ```powershell
-cd "C:\Users\vilma\letterboxd-match"
+cd "C:\Users\seu-usuario\letterboxd-match"
 ```
 
 Ative o ambiente virtual:
